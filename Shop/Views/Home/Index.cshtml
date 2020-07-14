@@ -5,7 +5,6 @@
 
 <h1>@ViewData["Title"]</h1>
 
-
 @foreach (var order in Model)
 {
     <div class="row">
@@ -14,28 +13,42 @@
         <div class="col-md-4"><span>Brand: </span>@order.Brand</div>
 
         <button onclick="edit('@order.Id')" class="btn btn-danger">Edit</button>
-
     </div>
 
     <hr />
 }
 
 <div class="add-button-wrapper">
-    <button class="btn btn-primary">Add order</button>
+    <button onclick="addEvent()" class="btn btn-primary">Add order</button>
 </div>
 
 <div class="add-form-wrapper invisible">
-    <form action="/" method="post">
-        <input type="text" name="name" placeholder="Item..." />
-        <input type="text" name="name" placeholder="Brand..." />
+    <form asp-controller="Home" asp-action="Add" method="post">
+        <input type="text" name="orderName" placeholder="Item..." />
+        <input type="text" name="brand" placeholder="Brand..." />
 
-        <button class="btn btn-primary">Add</button>
+        <button type="submit" class="btn btn-primary">Add</button>
+        <button type="button" onclick="cancelAdd()" class="btn btn-info">Cancel</button>
     </form>
 </div>
 
-
-
 <script>
+    function cancelAdd(){
+        var $button = $(".add-button-wrapper");
+        var $form = $(".add-form-wrapper");
+
+        $form.addClass("invisible");
+        $button.removeClass("invisible");
+    }
+
+    function addEvent() {
+        var $button = $(".add-button-wrapper");
+        var $form = $(".add-form-wrapper");
+
+        $button.addClass("invisible");
+        $form.removeClass("invisible");
+    }
+
     function edit(id) {
         window.location = "Home/Edit/" + id
     }

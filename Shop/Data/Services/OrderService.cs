@@ -6,6 +6,13 @@ namespace Shop.Data.Services
 {
     public class OrderService : IOrderService
     {
+        public void Add(string orderName, string brand)
+        {
+            using var db = new ApplicationDbContext();
+            db.Orders.Add(new Order { Item = orderName, Brand = brand });
+            db.SaveChanges();
+        }
+
         public void Edit(Order order)
         {
             using var db = new ApplicationDbContext();

@@ -1,5 +1,6 @@
 ﻿namespace Shop.Controllers
 {
+    using System.ComponentModel.DataAnnotations;
     using System.Diagnostics;
     using Microsoft.AspNetCore.Mvc;
     using Shop.Data.Models;
@@ -34,6 +35,17 @@
         public IActionResult SaveEdit(Order order)
         {
             orderService.Edit(order);
+
+            return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        public IActionResult Add([Required]string orderName, [Required]string brand)
+        {
+            if (ModelState.IsValid)
+            {
+                orderService.Add(orderName, brand);
+            }
 
             return RedirectToAction("Index");
         }

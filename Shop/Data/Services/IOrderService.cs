@@ -10,5 +10,7 @@
         Order GetById(int id);
 
         void Edit(Order order);
+
+        void Add(string name, string brand);
     }
 }
