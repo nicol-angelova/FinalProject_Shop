@@ -18,13 +18,18 @@
 
         public IActionResult Index()
         {
+            return View();
+        }
+
+        public IActionResult Orders()
+        {
             var orders = orderService.GetAll();
 
             return View(orders);
         }
 
         [HttpGet]
-        [Route("Home/Edit/{id}")]
+        [Route("Orders/Edit/{id}")]
         public IActionResult Edit(int id)
         {
             var model = orderService.GetById(id);
@@ -36,7 +41,7 @@
         {
             orderService.Edit(order);
 
-            return RedirectToAction("Index");
+            return RedirectToAction("Orders");
         }
 
         [HttpPost]
@@ -47,7 +52,7 @@
                 orderService.Add(orderName, brand);
             }
 
-            return RedirectToAction("Index");
+            return RedirectToAction("Orders");
         }
 
         public IActionResult Privacy()
