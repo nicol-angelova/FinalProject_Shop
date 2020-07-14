@@ -1,0 +1,42 @@
+﻿@model List<Order>
+@{
+    ViewData["Title"] = "Orders";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+
+@foreach (var order in Model)
+{
+    <div class="row">
+        <div class="col-md-4"><span>Name: </span>@order.Item</div>
+
+        <div class="col-md-4"><span>Brand: </span>@order.Brand</div>
+
+        <button onclick="edit('@order.Id')" class="btn btn-danger">Edit</button>
+
+    </div>
+
+    <hr />
+}
+
+<div class="add-button-wrapper">
+    <button class="btn btn-primary">Add order</button>
+</div>
+
+<div class="add-form-wrapper invisible">
+    <form action="/" method="post">
+        <input type="text" name="name" placeholder="Item..." />
+        <input type="text" name="name" placeholder="Brand..." />
+
+        <button class="btn btn-primary">Add</button>
+    </form>
+</div>
+
+
+
+<script>
+    function edit(id) {
+        window.location = "Home/Edit/" + id
+    }
+</script>

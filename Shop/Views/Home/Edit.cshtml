@@ -1,0 +1,22 @@
+﻿@model Order
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<form asp-controller="Home" asp-action="SaveEdit" method="post">
+    <div class=" row">
+        <div class="col-md-3">
+            <label asp-for="Item"></label>
+            <input class="form-control" asp-for="Item" />
+        </div>
+        <div class="col-md-3">
+            <label asp-for="Brand"></label>
+            <input class="form-control" asp-for="Brand" />
+        </div>
+        <input asp-for="Id" hidden />
+        <input class="btn btn-primary" type="submit" value="Save" />
+    </div>
+
+</form>
