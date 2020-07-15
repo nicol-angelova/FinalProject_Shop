@@ -13,6 +13,15 @@ namespace Shop.Data.Services
             db.SaveChanges();
         }
 
+        public void Delete(int id)
+        {
+            using var db = new ApplicationDbContext();
+            var order = GetById(id);
+            db.Orders.Remove(order);
+            db.SaveChanges();
+
+        }
+
         public void Edit(Order order)
         {
             using var db = new ApplicationDbContext();

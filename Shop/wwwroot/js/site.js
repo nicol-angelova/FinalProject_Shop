@@ -1,4 +1,33 @@
-﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿function getItemToDelete(id, item) {
+    var $item = $("#orderToDeleteName");
+    var $id = $("#orderToDeleteId");
 
-// Write your JavaScript code.
+    $item.html(item);
+    $id.html(id);
+}
+
+function deleteItem() {
+    var $id = $('#orderToDeleteId').html();
+
+    window.location = "DeleteItem/" + $id;
+}
+
+function cancelAdd() {
+    var $button = $(".add-button-wrapper");
+    var $form = $(".add-form-wrapper");
+
+    $form.addClass("invisible");
+    $button.removeClass("invisible");
+}
+
+function addEvent() {
+    var $button = $(".add-button-wrapper");
+    var $form = $(".add-form-wrapper");
+
+    $button.addClass("invisible");
+    $form.removeClass("invisible");
+}
+
+function edit(id) {
+    window.location = "Orders/Edit/" + id
+}

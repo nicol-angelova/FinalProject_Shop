@@ -31,25 +31,3 @@
         <button type="button" onclick="cancelAdd()" class="btn btn-info">Cancel</button>
     </form>
 </div>
-
-<script>
-    function cancelAdd(){
-        var $button = $(".add-button-wrapper");
-        var $form = $(".add-form-wrapper");
-
-        $form.addClass("invisible");
-        $button.removeClass("invisible");
-    }
-
-    function addEvent() {
-        var $button = $(".add-button-wrapper");
-        var $form = $(".add-form-wrapper");
-
-        $button.addClass("invisible");
-        $form.removeClass("invisible");
-    }
-
-    function edit(id) {
-        window.location = "Orders/Edit/" + id
-    }
-</script>

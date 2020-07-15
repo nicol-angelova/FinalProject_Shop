@@ -55,7 +55,24 @@
             return RedirectToAction("Orders");
         }
 
-        public IActionResult Privacy()
+        public IActionResult Delete()
+        {
+            var orders = orderService.GetAll();
+
+            return View(orders);
+        }
+
+        public IActionResult DeleteItem([Range(1,int.MaxValue)]int id)
+        {
+            if (ModelState.IsValid)
+            {
+                orderService.Delete(id);
+            }
+            
+            return RedirectToAction("Delete");
+        }
+
+        public IActionResult AboutUs()
         {
             return View();
         }

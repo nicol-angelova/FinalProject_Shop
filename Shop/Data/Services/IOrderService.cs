@@ -12,5 +12,7 @@
         void Edit(Order order);
 
         void Add(string name, string brand);
+
+        void Delete(int id);
     }
 }
