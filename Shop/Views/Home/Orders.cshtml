@@ -17,17 +17,3 @@
 
     <hr />
 }
-
-<div class="add-button-wrapper">
-    <button onclick="addEvent()" class="btn btn-primary">Add order</button>
-</div>
-
-<div class="add-form-wrapper invisible">
-    <form asp-controller="Home" asp-action="Add" method="post">
-        <input type="text" name="orderName" placeholder="Item..." />
-        <input type="text" name="brand" placeholder="Brand..." />
-
-        <button type="submit" class="btn btn-primary">Add</button>
-        <button type="button" onclick="cancelAdd()" class="btn btn-info">Cancel</button>
-    </form>
-</div>

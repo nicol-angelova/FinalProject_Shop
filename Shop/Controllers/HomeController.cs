@@ -44,6 +44,13 @@
             return RedirectToAction("Orders");
         }
 
+        public IActionResult AddOrders()
+        {
+            var orders = orderService.GetAll();
+
+            return View(orders);
+        }
+
         [HttpPost]
         public IActionResult Add([Required]string orderName, [Required]string brand)
         {
@@ -52,7 +59,7 @@
                 orderService.Add(orderName, brand);
             }
 
-            return RedirectToAction("Orders");
+            return RedirectToAction("AddOrders");
         }
 
         public IActionResult Delete()
