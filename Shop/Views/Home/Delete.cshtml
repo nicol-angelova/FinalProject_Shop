@@ -12,7 +12,8 @@
 
         <div class="col-md-4"><span>Brand: </span>@order.Brand</div>
 
-        <button onclick="getItemToDelete('@order.Id', '@order.Item')" class="btn btn-dark" data-toggle="modal" data-target="#exampleModal">Delete</button>
+        <button onclick="getItemToDelete('@order.Id', '@order.Item')" 
+                class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">Delete</button>
     </div>
 
     <hr />
@@ -33,8 +34,8 @@
                 <span hidden id="orderToDeleteId"></span>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button onclick="deleteItem()" type="button" class="btn btn-primary">Delete</button>
+                <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Close</button>
+                <button onclick="deleteItem()" type="button" class="btn btn-danger">Delete</button>
             </div>
         </div>
     </div>

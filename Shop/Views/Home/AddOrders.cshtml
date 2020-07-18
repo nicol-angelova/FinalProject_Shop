@@ -1,6 +1,6 @@
 ﻿@model List<Order>
 @{
-    ViewData["Title"] = "Orders";
+    ViewData["Title"] = "Add Orders";
 }
 
 <h1>@ViewData["Title"]</h1>
@@ -17,7 +17,7 @@
 }
 
 <div class="add-button-wrapper">
-    <button onclick="addEvent()" class="btn btn-primary">Add order</button>
+    <button onclick="addEvent()" class="btn btn-success">Add order</button>
 </div>
 
 <div class="add-form-wrapper invisible">
@@ -25,7 +25,7 @@
         <input type="text" name="orderName" placeholder="Item..." />
         <input type="text" name="brand" placeholder="Brand..." />
 
-        <button type="submit" class="btn btn-primary">Add</button>
-        <button type="button" onclick="cancelAdd()" class="btn btn-info">Cancel</button>
+        <button type="submit" class="btn btn-success">Add</button>
+        <button type="button" onclick="cancelAdd()" class="btn btn-outline-success">Cancel</button>
     </form>
 </div>
